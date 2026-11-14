@@ -22,7 +22,7 @@ var time_alive := 0.0
 var shock_active := false
 var shock_r := 0.0
 var flash := 0.0
-
+var bg: Texture2D = preload("res://assets/background.png.png")
 
 func _ready() -> void:
 	randomize()
@@ -147,7 +147,7 @@ func player_hit() -> void:
 
 
 func _draw() -> void:
-	# fundal rosu scurt cand esti lovit
+	draw_texture_rect(bg, Rect2(Vector2.ZERO, get_viewport_rect().size), false, Color(1, 1, 1, 0.5))
 	if flash > 0.0:
 		draw_rect(get_viewport_rect(), Color(1, 0.1, 0.1, flash * 0.25))
 
